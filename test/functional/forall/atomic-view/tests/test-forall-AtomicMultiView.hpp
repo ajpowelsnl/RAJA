@@ -23,7 +23,7 @@ void ForallAtomicMultiViewTestImpl( IdxType N )
 {
   // Functionally similar to ForallAtomicViewTestImpl
 
-  int dst_side = static_cast<int>( std::sqrt(static_cast<float>(N/2)) ); // dest[] dimension
+  int dst_side = static_cast<int>( std::sqrt( static_cast<double>(N/2) ) ); // dest[] dimension
   int src_side = dst_side*2; // source[] dimension
 
   RAJA::TypedRangeSegment<IdxType> seg(0, N);
