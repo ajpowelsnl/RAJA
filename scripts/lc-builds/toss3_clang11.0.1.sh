@@ -7,12 +7,7 @@
 # SPDX-License-Identifier: (BSD-3-Clause)
 ###############################################################################
 
-##
-# CMake option -DENABLE_FORCEINLINE_RECURSIVE=Off used to speed up compile 
-# times at a potential cost of slower 'forall' execution.
-##
-
-BUILD_SUFFIX=lc_toss3-icpc-19.1.0
+BUILD_SUFFIX=lc_toss3-clang-11.0.1
 
 rm -rf build_${BUILD_SUFFIX} 2>/dev/null
 mkdir build_${BUILD_SUFFIX} && cd build_${BUILD_SUFFIX}
@@ -21,11 +16,9 @@ module load cmake/3.14.5
 
 cmake \
   -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_CXX_COMPILER=/usr/tce/packages/intel/intel-19.1.0/bin/icpc \
-  -C ../host-configs/lc-builds/toss3/icpc_X_gcc8headers.cmake \
-  -DENABLE_FORCEINLINE_RECURSIVE=Off \
+  -DCMAKE_CXX_COMPILER=/usr/tce/packages/clang/clang-11.0.1/bin/clang++ \
+  -C ../host-configs/lc-builds/toss3/clang_X.cmake \
   -DENABLE_OPENMP=On \
-  -DENABLE_TBB=On \
   -DCMAKE_INSTALL_PREFIX=../install_${BUILD_SUFFIX} \
   "$@" \
-  ..
+  .. 
