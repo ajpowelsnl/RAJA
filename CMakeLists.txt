@@ -206,9 +206,9 @@ if (ENABLE_CUDA)
 endif ()
 
 if (ENABLE_HIP)
-  set (raja_depends
-    ${raja_depends}
-    hip)
+  #set (raja_depends
+    #${raja_depends}
+    #hip)
 endif ()
 
 if (ENABLE_HIP)

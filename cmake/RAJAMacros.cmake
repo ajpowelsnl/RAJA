@@ -24,7 +24,7 @@ macro(raja_add_executable)
   endif ()
 
   if (ENABLE_HIP)
-    list (APPEND arg_DEPENDS_ON hip)
+    #list (APPEND arg_DEPENDS_ON hip)
   endif ()
 
   if (ENABLE_TBB)
@@ -68,7 +68,7 @@ macro(raja_add_plugin_library)
   endif ()
 
   if (ENABLE_HIP)
-    list (APPEND arg_DEPENDS_ON hip)
+    #list (APPEND arg_DEPENDS_ON hip)
   endif ()
 
   if (ENABLE_TBB)
